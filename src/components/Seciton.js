@@ -13,11 +13,11 @@ export default function Seciton(props) {
                     <LeftButton>
                         {props.leftBtn}
                     </LeftButton>
-                    <RightButton>
+                    {props.rightBtn && <RightButton>
                         <span>{props.rightBtn}</span>
-                    </RightButton>
+                    </RightButton>}
                 </ButtonGroup>
-                <DownArrow style={{"display":`${props.arrow}`}} src="/images/down-arrow.svg" />
+                <DownArrow style={{"display":`${props.displayBtn}`}} src="/images/down-arrow.svg" />
         </Wrap>
     )
 }
@@ -60,17 +60,13 @@ const RightButton = styled(LeftButton)`
     padding: 12px 70px;
     background-color: white;
     color: #2a2a2a;
-    opacity:0.75
+    opacity:0.75;
 `
 
 
 const DownArrow = styled.img({
-    marginTop: "5vh",
+    marginTop: "13vh",
     height:"40px",
     animation:"animateDown infinite 1.5s",
     overflowX:"hidden"
 })
-
-// const Buttons = styled.button({
-//     // margin: "2px"
-// })

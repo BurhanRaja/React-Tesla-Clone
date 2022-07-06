@@ -11,7 +11,7 @@ export default function Home() {
                 backgroundImg="model-s.jpg"
                 leftBtn="Custom Order"
                 rightBtn="Existing Inventory"
-                arrow="block"
+                displayBtn="block"
             />
             <Seciton
                 title="Model Y"
@@ -19,7 +19,7 @@ export default function Home() {
                 backgroundImg="model-y.jpg"
                 leftBtn="Custom Order"
                 rightBtn="Existing Inventory"
-                arrow="none"
+                displayBtn="none"
             />
             <Seciton
                 title="Model 3"
@@ -27,7 +27,7 @@ export default function Home() {
                 backgroundImg="model-3.jpg"
                 leftBtn="Custom Order"
                 rightBtn="Existing Inventory"
-                arrow="none"
+                displayBtn="none"
             />
             <Seciton
                 title="Model X"
@@ -35,7 +35,7 @@ export default function Home() {
                 backgroundImg="model-x.jpg"
                 leftBtn="Custom Order"
                 rightBtn="Existing Inventory"
-                arrow="none"
+                displayBtn="none"
             />
             <Seciton
                 title="Solar Panels"
@@ -43,7 +43,7 @@ export default function Home() {
                 backgroundImg="solar-panel.jpg"
                 leftBtn="Order Now"
                 rightBtn="Learn More"
-                arrow="none"
+                displayBtn="none"
             />
             <Seciton
                 title="Solar Roof"
@@ -51,7 +51,13 @@ export default function Home() {
                 backgroundImg="solar-roof.jpg"
                 leftBtn="Order Now"
                 rightBtn="Learn More"
-                arrow="none"
+                displayBtn="none"
+            />
+            <Seciton
+                title="Accessories"
+                backgroundImg="accessories.jpg"
+                leftBtn="Shop Now"
+                displayBtn="none"
             />
         </Container>
     )
