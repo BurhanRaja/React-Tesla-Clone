@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Header = () => {
     return (
@@ -20,8 +21,29 @@ const Header = () => {
             <RightMenu>
                 <a href="/">Shop</a>
                 <a href="/">Tesla Account</a>
-                <MenuIcon style={{"cursor":"pointer", "fontWeight":"600"}} />
+                <SideMenu />
             </RightMenu>
+
+            <BurgerNav>
+                <CloseWrapper>
+                    <CloseIcon style={{"cursor":"pointer"}} />
+                </CloseWrapper>
+            <li><a href="#">Existing Inventory</a></li> 
+            <li><a href="#">Used Inventory</a></li> 
+            <li><a href="#">Trade-In</a></li>
+            <li><a href="#">Test Drive</a></li>
+            <li><a href="#">Insurance</a></li>
+            <li><a href="#">Cybertruck</a></li>
+            <li><a href="#">Roadster</a></li>
+            <li><a href="#">Semi</a></li>
+            <li><a href="#">Charging</a></li>
+            <li><a href="#">Powerwall</a></li>
+            <li><a href="#">Commercial Energy</a></li>
+            <li><a href="#">Utilities</a></li>
+            <li><a href="#">Find Us</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Investor Relations</a></li>
+            </BurgerNav>
         </Container>
     )
 }
@@ -37,7 +59,8 @@ const Container = styled.div({
     padding:"0 20px",
     top:"0",
     left:"0",
-    right:"0"
+    right:"0",
+    zIndex:"1",
 })
 
 
@@ -58,6 +81,12 @@ const Menu = styled.ul`
         font-size: 14px;
     }
 
+    @media(max-width: 1045px) {
+        a {
+            font-size: 12px;
+        }
+    } 
+
     @media(max-width: 768px) {
         display: none;
     }
@@ -74,4 +103,44 @@ const RightMenu = styled.div`
         flex-wrap: no-wrap;
         font-size: 14px;
     }
+
+    @media(max-width: 1045px) {
+        a {
+            font-size: 12px;
+        }
+    } 
 `
+
+const SideMenu = styled(MenuIcon)`
+    cursor: pointer; 
+    fontWeight: 600;
+
+`
+
+const BurgerNav = styled.div`
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    width: 250px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    overflow-y:scroll;
+    z-index: 10;
+
+    li {
+        padding: 15px 0;
+    }
+    a {
+        font-weight: 600;
+    }
+
+`
+
+const CloseWrapper = styled.div`
+    display: flex;
+    justify-content: flex-end;
+` 

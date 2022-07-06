@@ -1,14 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade';
 
 export default function Seciton(props) {
     return (
         <Wrap backImg={props.backgroundImg}>
+            <Fade bottom>
             <ItemText>
                 <h1>{props.title}</h1>
                 <p>{props.description}</p>
             </ItemText>
+            </Fade>
 
+            <Fade bottom>
             <ButtonGroup>
                 <LeftButton>
                     {props.leftBtn}
@@ -17,6 +21,7 @@ export default function Seciton(props) {
                     <span>{props.rightBtn}</span>
                 </RightButton>}
             </ButtonGroup>
+            </Fade>
             <DownArrow style={{ "display": `${props.displayBtn}` }} src="/images/down-arrow.svg" />
         </Wrap>
     )
@@ -33,15 +38,21 @@ const Wrap = styled.div({
     justifyContext: "space-between",
     alignItems: "center",
     backgroundImage: props => `url("/images/${props.backImg}")`,
+    zIndex:"-1",
 })
 
 const ItemText = styled.div({
     padding: "15vh",
 })
 
-const ButtonGroup = styled.div({
-    marginTop: "38vh"
-})
+const ButtonGroup = styled.div`
+    margin-top: 38vh;
+    display: flex;
+
+    @media(max-width: 768px) {
+        flex-direction: column;
+    }
+`
 const LeftButton = styled.a({
     backgroundColor: "#2a2a2a",
     color: "white",
@@ -65,7 +76,7 @@ const RightButton = styled(LeftButton)`
 
 
 const DownArrow = styled.img({
-    marginTop: "13vh",
+    marginTop: "9vh",
     height: "40px",
     animation: "animateDown infinite 1.5s",
     overflowX: "hidden",
