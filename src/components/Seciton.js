@@ -9,38 +9,38 @@ export default function Seciton(props) {
                 <p>{props.description}</p>
             </ItemText>
 
-                <ButtonGroup>
-                    <LeftButton>
-                        {props.leftBtn}
-                    </LeftButton>
-                    {props.rightBtn && <RightButton>
-                        <span>{props.rightBtn}</span>
-                    </RightButton>}
-                </ButtonGroup>
-                <DownArrow style={{"display":`${props.displayBtn}`}} src="/images/down-arrow.svg" />
+            <ButtonGroup>
+                <LeftButton>
+                    {props.leftBtn}
+                </LeftButton>
+                {props.rightBtn && <RightButton>
+                    <span>{props.rightBtn}</span>
+                </RightButton>}
+            </ButtonGroup>
+            <DownArrow style={{ "display": `${props.displayBtn}` }} src="/images/down-arrow.svg" />
         </Wrap>
     )
 }
 
 const Wrap = styled.div({
-    width:"100vw",
+    width: "100vw",
     height: "100vh",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    display:"flex",
-    flexDirection:"column",
-    justifyContext:"space-between",
-    alignItems:"center",
+    display: "flex",
+    flexDirection: "column",
+    justifyContext: "space-between",
+    alignItems: "center",
     backgroundImage: props => `url("/images/${props.backImg}")`,
 })
 
 const ItemText = styled.div({
-    padding: "12vh",
+    padding: "15vh",
 })
 
 const ButtonGroup = styled.div({
-    marginTop: "42vh"
+    marginTop: "38vh"
 })
 const LeftButton = styled.a({
     backgroundColor: "#2a2a2a",
@@ -66,7 +66,8 @@ const RightButton = styled(LeftButton)`
 
 const DownArrow = styled.img({
     marginTop: "13vh",
-    height:"40px",
-    animation:"animateDown infinite 1.5s",
-    overflowX:"hidden"
+    height: "40px",
+    animation: "animateDown infinite 1.5s",
+    overflowX: "hidden",
+    cursor:"pointer"
 })
